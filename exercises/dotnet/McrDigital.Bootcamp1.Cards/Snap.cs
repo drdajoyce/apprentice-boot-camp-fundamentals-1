@@ -2,7 +2,7 @@ namespace McrDigital.Bootcamp1.Cards {
   using System;
 
   public class Snap {
-    static void Main(string[] args) {
+    static void NotMain(string[] args) {
       var snap = new Snap(new AnimalDeck());
       snap.Play();
     }

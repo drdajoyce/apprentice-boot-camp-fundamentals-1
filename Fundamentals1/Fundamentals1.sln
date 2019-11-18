@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "helloworld", "..\exercises\dotnet\helloworld\helloworld.csproj", "{112A11D9-E6D3-47E0-9F48-B1ED1605836B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "McrDigital.Bootcamp1.Cards", "..\exercises\dotnet\McrDigital.Bootcamp1.Cards\McrDigital.Bootcamp1.Cards.csproj", "{7DF465AC-4C4D-4969-84E9-886C8378E4EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "McrDigital.Bootcamp1.Cards.Tests", "..\exercises\dotnet\McrDigital.Bootcamp1.Cards.Tests\McrDigital.Bootcamp1.Cards.Tests.csproj", "{8FA1383F-64C1-41A3-A0D2-050E08C200E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "McrDigital.Bootcamp1.Checkout", "..\exercises\dotnet\McrDigital.Bootcamp1.Checkout\McrDigital.Bootcamp1.Checkout.csproj", "{1544EA88-7088-43AC-A2C0-573BC251D203}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "McrDigital.Bootcamp1.Checkout.Tests", "..\exercises\dotnet\McrDigital.Bootcamp1.Checkout.Tests\McrDigital.Bootcamp1.Checkout.Tests.csproj", "{2EB9AF24-1116-454E-8EA0-0CC374F7656A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{112A11D9-E6D3-47E0-9F48-B1ED1605836B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112A11D9-E6D3-47E0-9F48-B1ED1605836B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112A11D9-E6D3-47E0-9F48-B1ED1605836B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112A11D9-E6D3-47E0-9F48-B1ED1605836B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF465AC-4C4D-4969-84E9-886C8378E4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF465AC-4C4D-4969-84E9-886C8378E4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF465AC-4C4D-4969-84E9-886C8378E4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF465AC-4C4D-4969-84E9-886C8378E4EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA1383F-64C1-41A3-A0D2-050E08C200E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA1383F-64C1-41A3-A0D2-050E08C200E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA1383F-64C1-41A3-A0D2-050E08C200E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA1383F-64C1-41A3-A0D2-050E08C200E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1544EA88-7088-43AC-A2C0-573BC251D203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1544EA88-7088-43AC-A2C0-573BC251D203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1544EA88-7088-43AC-A2C0-573BC251D203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1544EA88-7088-43AC-A2C0-573BC251D203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB9AF24-1116-454E-8EA0-0CC374F7656A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB9AF24-1116-454E-8EA0-0CC374F7656A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB9AF24-1116-454E-8EA0-0CC374F7656A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB9AF24-1116-454E-8EA0-0CC374F7656A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {737AD097-27FE-49F4-A1E1-7013FE8836A5}
+	EndGlobalSection
+EndGlobal
