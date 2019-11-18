@@ -6,10 +6,10 @@ namespace McrDigital.Bootcamp1.Cards
 {
      public class Card
     {
-        public int suit { get; }
-        public int value { get; }
+        public Suit suit { get; }
+        public FaceValue value { get; }
 
-        public Card( int suit, int value)
+        public Card( Suit suit, FaceValue value)
         {
             this.suit = suit;
             this.value = value;
