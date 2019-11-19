@@ -10,38 +10,9 @@ namespace McrDigital.Bootcamp1.Cards
         {
             Cards = new List<GenericCard>();
 
-            var suits = new Suit[]{
-                new Suit("clubs"),
-                new Suit("diamonds"),
-                new Suit("hearts"),
-                new Suit("spades") };
 
-            var faceValues = new FaceValue[]
-            {
-             new FaceValue("ace"),
-             new FaceValue("2"),
-             new FaceValue("3"),
-             new FaceValue("4"),
-             new FaceValue("5"),
-             new FaceValue("6"),
-             new FaceValue("7"),
-             new FaceValue("8"),
-             new FaceValue("9"),
-             new FaceValue("10"),
-             new FaceValue("jack"),
-             new FaceValue("queen"),
-             new FaceValue("king")
 
-        };
-
-            foreach (var suit in suits)
-            {
-                foreach (var faceValue in faceValues)
-                {
-                    var card = new Card(suit, faceValue);
-                    Cards.Add(card);
-                }
-            }
+            PopulateDeck(Cards);
         }
 
         public override string[] GetCards()
@@ -94,6 +65,42 @@ namespace McrDigital.Bootcamp1.Cards
         public override void Shuffle()
         {
             this.Cards.KnuthShuffle();
+        }
+
+        public static void PopulateDeck(List<GenericCard> deck)
+        {
+            var suits = new Suit[]{
+                new Suit("clubs"),
+                new Suit("diamonds"),
+                new Suit("hearts"),
+                new Suit("spades") };
+
+            var faceValues = new FaceValue[]
+            {
+             new FaceValue("ace"),
+             new FaceValue("2"),
+             new FaceValue("3"),
+             new FaceValue("4"),
+             new FaceValue("5"),
+             new FaceValue("6"),
+             new FaceValue("7"),
+             new FaceValue("8"),
+             new FaceValue("9"),
+             new FaceValue("10"),
+             new FaceValue("jack"),
+             new FaceValue("queen"),
+             new FaceValue("king")
+
+        };
+
+            foreach (var suit in suits)
+            {
+                foreach (var faceValue in faceValues)
+                {
+                    var card = new Card(suit, faceValue);
+                    deck.Add(card);
+                }
+            }
         }
     }
 
