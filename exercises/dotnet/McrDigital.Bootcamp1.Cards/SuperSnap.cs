@@ -4,11 +4,11 @@ using System.Text;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public class PlayingCardSnap
+    class SuperSnap
     {
-        static void NotMain(string[] args)
+        static void Main(string[] args)
         {
-            var snap = new PlayingCardSnap(new PlayingCardDeck());
+            var snap = new SuperSnap(new SuperDeck());
             snap.Play();
         }
 
@@ -16,7 +16,7 @@ namespace McrDigital.Bootcamp1.Cards
         private int _player2Score;
         private readonly Deck _deck;
 
-        public PlayingCardSnap(Deck deck)
+        public SuperSnap(Deck deck)
         {
             this._deck = deck;
             this._deck.Shuffle();
@@ -28,7 +28,7 @@ namespace McrDigital.Bootcamp1.Cards
             while (this._deck.GetCards().Length > 0)
             {
                 var currentCard = this._deck.Deal();
-                Console.WriteLine(currentCard.CardValue );
+                Console.WriteLine(currentCard.CardValue);
 
                 var input = Console.ReadLine();
                 if (input.Length > 0 && input[0] == 'a')

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public abstract class Deck
+    public abstract class Deck : IEnumerable<GenericCard>
     {
         public List<GenericCard> Cards { get; set; }
 
@@ -17,5 +18,16 @@ namespace McrDigital.Bootcamp1.Cards
 
         public abstract void Shuffle();
         public abstract string[] GetCards();
+
+        public IEnumerator<GenericCard> GetEnumerator()
+        {
+            return Cards.GetEnumerator();
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
