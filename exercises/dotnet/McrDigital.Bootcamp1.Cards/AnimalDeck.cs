@@ -2,33 +2,32 @@ namespace McrDigital.Bootcamp1.Cards {
   using System;
   using System.Collections.Generic;
 
-  public class AnimalDeck {
-    private readonly List<AnimalCard> _cards;
+  public class AnimalDeck : Deck {
 
     public AnimalDeck() {
-      this._cards = new List<AnimalCard>();
+      Cards = new List<GenericCard>();
       foreach (Animal animal in Enum.GetValues(typeof(Animal))) {
-        this._cards.Add(new AnimalCard(animal));
-        this._cards.Add(new AnimalCard(animal));
+        this.Cards.Add(new AnimalCard(animal));
+        this.Cards.Add(new AnimalCard(animal));
       }
     }
 
-    public AnimalCard Deal() {
+/*    public override AnimalCard Deal() {
       var card = this._cards[0];
       this._cards.RemoveAt(0);
       return card;
-    }
+    }*/
 
-    public string[] GetCards() {
-      var result = new String[this._cards.Count];
-      for (var index = 0; index < this._cards.Count; index++) {
-        var card = this._cards[index]; result[index] = card.ToString();
+    public override string[] GetCards() {
+      var result = new String[this.Cards.Count];
+      for (var index = 0; index < this.Cards.Count; index++) {
+        var card = this.Cards[index]; result[index] = card.ToString();
       }
       return result;
     }
 
-    public void Shuffle() {
-      this._cards.KnuthShuffle();
+    public override void Shuffle() {
+      this.Cards.KnuthShuffle();
     }
   }
 

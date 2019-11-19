@@ -3,7 +3,7 @@ namespace McrDigital.Bootcamp1.Cards {
     using System.Collections.Generic;
 
     public class Encapsulation {
-    static void Main(string[] args) {
+    static void NotMain(string[] args) {
       var encapsulation = new Encapsulation();
       var deckInOrder = encapsulation.GetCards();
       foreach (var card in deckInOrder) {

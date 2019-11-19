@@ -2,7 +2,7 @@ namespace McrDigital.Bootcamp1.Cards {
   using System;
 
   public class Snap {
-    static void NotMain(string[] args) {
+    static void Main(string[] args) {
       var snap = new Snap(new AnimalDeck());
       snap.Play();
     }
@@ -17,7 +17,7 @@ namespace McrDigital.Bootcamp1.Cards {
     }
 
     public void Play() {
-      AnimalCard previousCard = null;
+      GenericCard previousCard = null;
       while (this._deck.GetCards().Length > 0) {
         var currentCard = this._deck.Deal();
         Console.WriteLine(currentCard);

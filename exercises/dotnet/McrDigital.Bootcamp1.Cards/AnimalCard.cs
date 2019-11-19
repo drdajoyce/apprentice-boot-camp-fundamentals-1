@@ -1,5 +1,5 @@
 namespace McrDigital.Bootcamp1.Cards {
-  public class AnimalCard {
+  public class AnimalCard : GenericCard{
     private readonly Animal _animal;
 
     public AnimalCard(Animal animal) {
@@ -10,12 +10,18 @@ namespace McrDigital.Bootcamp1.Cards {
       get => this._animal;
     }
 
-    public bool Snap(AnimalCard other) {
+ /*   public override bool Snap(GenericCard other) {
       return this._animal == other._animal;
-    }
+    }*/
 
-    public override string ToString() {
+        public override string ToString() {
       return this._animal.ToString();
     }
+
+        public override string CardValue { get
+            {
+                return this.ToString();
+            }
+        }
   }
 }
