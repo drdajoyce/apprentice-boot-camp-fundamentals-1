@@ -12,11 +12,10 @@ namespace McrDigital.Bootcamp1.Checkout
 
         public OffersList()
         {
-            this.offers.Add(new Offer(3, 20, "A"));
-            this.offers.Add(new Offer(2, 15, "B"));
-            this.offers.Add(new Offer(4, 10, "C"));
-            this.offers.Add(new Offer(5, 15, "D"));
-
+            offers.Add(new Offer(3, 20, "A"));
+            offers.Add(new Offer(2, 15, "B"));
+            offers.Add(new Offer(4, 10, "C"));
+            offers.Add(new Offer(5, 15, "D"));
         }
 
         public IEnumerator<Offer> GetEnumerator()

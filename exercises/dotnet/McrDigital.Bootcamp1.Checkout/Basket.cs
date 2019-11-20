@@ -5,22 +5,16 @@ using System.Text;
 
 namespace McrDigital.Bootcamp1.Checkout
 {
-    public class Basket : IEnumerable<Product>
+    public class Basket 
     {
-        public List<Product> items = new List<Product>();
-        public int numberOfA = 0;
-        public int numberOfB = 0;
-        public int numberOfC = 0;
-        public int numberOfD = 0;
+        public SortedDictionary<string, int> items = new SortedDictionary<string, int>();
 
-    public IEnumerator<Product> GetEnumerator()
+        public Basket()
         {
-            return items.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            items.Add("A", 0);
+            items.Add("B", 0);
+            items.Add("C", 0);
+            items.Add("D", 0);
         }
     }
 }

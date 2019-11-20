@@ -4,15 +4,14 @@ namespace McrDigital.Bootcamp1.Checkout
 
     public class Receipt
     {
-        private string _text = String.Empty;
-        public ProductList products = new ProductList();
-        public OffersList offers = new OffersList();
-        public int _total;
-        public bool applyDiscount = false;
+        private string text = String.Empty;
+        public ProductList products;
+        public OffersList offers;
+        public int total;
 
         public string Text
         {
-            get => $"{this._text}Total: {this._total}";
+            get => $"{text}Total: {total}";
         }      
 
         public void WriteToReceipt(string sku)
@@ -21,17 +20,17 @@ namespace McrDigital.Bootcamp1.Checkout
             {
                 if (product.sku.Equals(sku))
                 {
-                    this._text = $"{this._text}{sku}: {product.price}";
+                    text = $"{text}{sku}: {product.price}";
                     foreach (var offer in offers)
                     {
-                        if (this.applyDiscount && offer.sku.Equals(sku))
+                        if (offers.applyOffer && offer.sku.Equals(sku))
                         {
-                            this._text = $"{this._text} - {offer.discount} ({offer.itemQuantity} for " +
-                                $"{product.price * offer.itemQuantity - offer.discount})";
+                            text = $"{text} - {offer.discount} ({offer.multibuyQuantity} for " +
+                                $"{product.price * offer.multibuyQuantity - offer.discount})";
                         }
                     }
-                    this._text = $"{this._text}\n";
-                    this.applyDiscount = false;
+                    text = $"{text}\n";
+                    offers.applyOffer = false;
                 }
             }
 

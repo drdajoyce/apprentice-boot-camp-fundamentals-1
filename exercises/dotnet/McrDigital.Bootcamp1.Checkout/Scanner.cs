@@ -6,8 +6,8 @@ namespace McrDigital.Bootcamp1.Checkout
 {
     public class Scanner
     {
-        ProductList productList = new ProductList();
-        Basket basket = new Basket();
+        public ProductList productList;
+        public Basket basket;
 
         public void AddItemToBasket(string sku)
         {
@@ -15,7 +15,7 @@ namespace McrDigital.Bootcamp1.Checkout
             {
                 if (item.sku.Equals(sku))
                 {
-                    basket.items.Add(item);
+                    basket.items[sku]++;
                 }
             }
         }

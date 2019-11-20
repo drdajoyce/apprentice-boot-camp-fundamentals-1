@@ -4,25 +4,29 @@ namespace McrDigital.Bootcamp1.Checkout
 {
     public class Checkout
     {
-        private int _total;
+        private int total;
         public ProductList products = new ProductList();
+        public OffersList offers = new OffersList();
         public Scanner scanner = new Scanner();
         private Basket basket = new Basket();
-        private int _numberOfA;
-        private int _numberOfB;
-        private int _numberOfC;
-        private int _numberOfD;
-        public bool applyDiscount = false;
-        private Receipt _receipt = new Receipt();
+        private Receipt receipt = new Receipt();
+
+        public Checkout()
+        {
+            receipt.offers = offers;
+            receipt.products = products;
+            scanner.basket = basket;
+            scanner.productList = products;
+        }
 
         public string Receipt
         {
-            get => this._receipt.Text;
+            get => receipt.Text;
         }
 
         public int Total
         {
-            get => this._total;
+            get => total;
         }
 
         public void AddItemPriceToTotal(string sku)
@@ -31,7 +35,19 @@ namespace McrDigital.Bootcamp1.Checkout
             {
                 if (product.sku.Equals(sku))
                 {
-                    this._total += product.price;
+                    total += product.price;
+                }
+            }
+        }
+
+        public void ApplyOffer(string sku)
+        {
+            foreach (var offer in offers)
+            {
+                if(offer.sku.Equals(sku) && basket.items[sku] % offer.multibuyQuantity == 0)
+                {
+                    offers.applyOffer = true;
+                    total -= offer.discount;
                 }
             }
         }
@@ -39,47 +55,16 @@ namespace McrDigital.Bootcamp1.Checkout
         public void Scan(string sku)
         {
             AddItemPriceToTotal(sku);
-            if ("A".Equals(sku))
-            {               
-                this._numberOfA++;
-                if (this._numberOfA % 3 == 0)
-                {
-                    this._receipt.applyDiscount = true;
-                    this._total -= 20;
-                }
-                this._receipt.WriteToReceipt("A");
-            }
-            else if ("B".Equals(sku))
-            {               
-                this._numberOfB++;
-                if (this._numberOfB % 2 == 0)
-                {
-                    this._receipt.applyDiscount = true;
-                    this._total -= 15;
-                }
-                this._receipt.WriteToReceipt("B");
-            }
-            else if ("C".Equals(sku))
-            {               
-                this._numberOfC++;
-                if (this._numberOfC % 4 == 0)
-                {
-                    this._receipt.applyDiscount = true;
-                    this._total -= 10;
-                }
-                this._receipt.WriteToReceipt("C");
-            }
-            else if ("D".Equals(sku))
+            foreach (var product in products)
             {
-                this._numberOfD++;
-                if (this._numberOfD % 5 == 0)
-                {                    
-                    this._receipt.applyDiscount = true;
-                    this._total -= 15;
+                if(product.sku.Equals(sku))
+                {
+                    scanner.AddItemToBasket(sku);
+                    ApplyOffer(sku);
+                    receipt.WriteToReceipt(sku);
                 }
-                this._receipt.WriteToReceipt("D");
             }
-            this._receipt._total = _total;
+            this.receipt.total = total;
         }
     }
 }

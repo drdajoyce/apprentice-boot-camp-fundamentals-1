@@ -11,22 +11,22 @@ namespace McrDigital.Bootcamp1.Checkout
 
         public ProductList()
         {
-            this.products.Add(new Product("A", 50));
-            this.products.Add(new Product("B", 30));
-            this.products.Add(new Product("C", 20));
-            this.products.Add(new Product("D", 15));
+            products.Add(new Product("A", 50));
+            products.Add(new Product("B", 30));
+            products.Add(new Product("C", 20));
+            products.Add(new Product("D", 15));
         }
 
         public Product LookUpProduct(string sku)
         {
             Product result = null;
 
-            for (int i = 0; i < this.products.Count; i++)
+            for (int i = 0; i < products.Count; i++)
             {
 
-                if (this.products[i].sku.Equals(sku))
+                if (products[i].sku.Equals(sku))
                 {
-                    result = new Product(this.products[i].sku, this.products[i].price);
+                    result = new Product(products[i].sku, products[i].price);
 
                 }
             }
