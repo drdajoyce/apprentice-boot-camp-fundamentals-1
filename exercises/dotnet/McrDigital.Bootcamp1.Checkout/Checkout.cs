@@ -11,6 +11,7 @@ namespace McrDigital.Bootcamp1.Checkout
         private int _numberOfB;
         private int _numberOfC;
         private int _numberOfD;
+        public bool applyDiscount = false;
         private Receipt _receipt = new Receipt();
 
         public string Receipt
@@ -38,40 +39,44 @@ namespace McrDigital.Bootcamp1.Checkout
         {
             AddItemPriceToTotal(sku);
             if ("A".Equals(sku))
-            {
-                this._receipt.Scanned("A");
+            {               
                 this._numberOfA++;
                 if (this._numberOfA % 3 == 0)
                 {
+                    this._receipt.applyDiscount = true;
                     this._total -= 20;
                 }
+                this._receipt.Scanned("A");
             }
             else if ("B".Equals(sku))
-            {
-                this._receipt.ScannedB();
+            {               
                 this._numberOfB++;
                 if (this._numberOfB % 2 == 0)
                 {
+                    this._receipt.applyDiscount = true;
                     this._total -= 15;
                 }
+                this._receipt.Scanned("B");
             }
             else if ("C".Equals(sku))
-            {
-                this._receipt.ScannedC();
+            {               
                 this._numberOfC++;
                 if (this._numberOfC % 4 == 0)
                 {
+                    this._receipt.applyDiscount = true;
                     this._total -= 10;
                 }
+                this._receipt.Scanned("C");
             }
             else if ("D".Equals(sku))
             {
-                this._receipt.ScannedD();
                 this._numberOfD++;
                 if (this._numberOfD % 5 == 0)
-                {
+                {                    
+                    this._receipt.applyDiscount = true;
                     this._total -= 15;
                 }
+                this._receipt.Scanned("D");
             }
         }
     }
