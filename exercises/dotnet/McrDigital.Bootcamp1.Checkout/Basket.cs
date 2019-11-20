@@ -8,9 +8,10 @@ namespace McrDigital.Bootcamp1.Checkout
     public class Basket : IEnumerable<Product>
     {
         public List<Product> items = new List<Product>();
-
-
-
+        public int numberOfA = 0;
+        public int numberOfB = 0;
+        public int numberOfC = 0;
+        public int numberOfD = 0;
 
     public IEnumerator<Product> GetEnumerator()
         {

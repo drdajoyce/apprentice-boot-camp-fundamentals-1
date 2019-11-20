@@ -6,7 +6,8 @@ namespace McrDigital.Bootcamp1.Checkout
     {
         private int _total;
         public ProductList products = new ProductList();
-
+        public Scanner scanner = new Scanner();
+        private Basket basket = new Basket();
         private int _numberOfA;
         private int _numberOfB;
         private int _numberOfC;
@@ -46,7 +47,7 @@ namespace McrDigital.Bootcamp1.Checkout
                     this._receipt.applyDiscount = true;
                     this._total -= 20;
                 }
-                this._receipt.Scanned("A");
+                this._receipt.WriteToReceipt("A");
             }
             else if ("B".Equals(sku))
             {               
@@ -56,7 +57,7 @@ namespace McrDigital.Bootcamp1.Checkout
                     this._receipt.applyDiscount = true;
                     this._total -= 15;
                 }
-                this._receipt.Scanned("B");
+                this._receipt.WriteToReceipt("B");
             }
             else if ("C".Equals(sku))
             {               
@@ -66,7 +67,7 @@ namespace McrDigital.Bootcamp1.Checkout
                     this._receipt.applyDiscount = true;
                     this._total -= 10;
                 }
-                this._receipt.Scanned("C");
+                this._receipt.WriteToReceipt("C");
             }
             else if ("D".Equals(sku))
             {
@@ -76,8 +77,9 @@ namespace McrDigital.Bootcamp1.Checkout
                     this._receipt.applyDiscount = true;
                     this._total -= 15;
                 }
-                this._receipt.Scanned("D");
+                this._receipt.WriteToReceipt("D");
             }
+            this._receipt._total = _total;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace McrDigital.Bootcamp1.Checkout
     public class OffersList : IEnumerable<Offer>
     {
         public List<Offer> offers = new List<Offer>();
+        public bool applyOffer = false;
 
         public OffersList()
         {
