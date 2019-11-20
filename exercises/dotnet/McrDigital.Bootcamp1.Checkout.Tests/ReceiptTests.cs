@@ -90,7 +90,6 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             checkout.Scan("D");
             checkout.Scan("D");
 
-
             Assert.Equal(new string[] {
         "D: 15",
         "D: 15",

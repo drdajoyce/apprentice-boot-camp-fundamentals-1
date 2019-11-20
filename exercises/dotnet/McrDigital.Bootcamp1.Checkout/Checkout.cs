@@ -29,17 +29,6 @@ namespace McrDigital.Bootcamp1.Checkout
             get => total;
         }
 
-        public void AddItemPriceToTotal(string sku)
-        {
-            foreach (var product in products)
-            {
-                if (product.sku.Equals(sku))
-                {
-                    total += product.price;
-                }
-            }
-        }
-
         public void ApplyOffer(string sku)
         {
             foreach (var offer in offers)
@@ -54,12 +43,12 @@ namespace McrDigital.Bootcamp1.Checkout
 
         public void Scan(string sku)
         {
-            AddItemPriceToTotal(sku);
             foreach (var product in products)
             {
                 if(product.sku.Equals(sku))
                 {
                     scanner.AddItemToBasket(sku);
+                    total += product.price;
                     ApplyOffer(sku);
                     receipt.WriteToReceipt(sku);
                 }
