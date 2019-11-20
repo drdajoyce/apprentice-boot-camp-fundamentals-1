@@ -55,5 +55,46 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
         "Total: 210"
       }, checkout.Receipt.Split("\n"));
     }
-  }
+
+        [Fact]
+        public void MultibuyOnC()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+
+            Assert.Equal(new string[] {
+        "C: 20",
+        "C: 20",
+        "C: 20",
+        "C: 20 - 10 (4 for 70)",
+        "Total: 70"
+      }, checkout.Receipt.Split("\n"));
+        }
+
+        [Fact]
+        public void MultibuyOnD()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+
+
+            Assert.Equal(new string[] {
+        "D: 15",
+        "D: 15",
+        "D: 15",
+        "D: 15",
+        "D: 15 - 15 (5 for 60)",
+        "Total: 60"
+      }, checkout.Receipt.Split("\n"));
+        }
+    }
 }

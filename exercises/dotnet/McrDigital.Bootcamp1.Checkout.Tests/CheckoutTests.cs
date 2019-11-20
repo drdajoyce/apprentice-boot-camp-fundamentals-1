@@ -5,6 +5,16 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
 
   public class CheckoutTests {
     [Fact]
+    public void LookUpA()
+        {
+            var checkout = new Checkout();
+
+            Product result = checkout.products.LookUpProduct("A");
+
+            Assert.Equal("A", result.sku);
+        }
+
+    [Fact]
     public void OneA() {
       var checkout = new Checkout();
 
@@ -13,7 +23,17 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       Assert.Equal(50, checkout.Total);
     }
 
-    [Fact]
+        [Fact]
+        public void OneAWithTotaller()
+        {
+            var checkout = new Checkout();
+
+            checkout.AddItemPriceToTotal("A");
+
+            Assert.Equal(50, checkout.Total);
+        }
+
+        [Fact]
     public void TwoA() {
       var checkout = new Checkout();
 
@@ -34,7 +54,20 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       Assert.Equal(130, checkout.Total);
     }
 
-    [Fact]
+   [Fact]
+   public void FourA()
+     {
+            var checkout = new Checkout();
+
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+
+            Assert.Equal(180, checkout.Total);
+        }
+
+        [Fact]
     public void SixA() {
       var checkout = new Checkout();
 
@@ -79,6 +112,49 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
     }
 
     [Fact]
+    public void FourC() {
+      var checkout = new Checkout();
+
+      checkout.Scan("C");
+      checkout.Scan("C");
+      checkout.Scan("C");
+      checkout.Scan("C");
+
+      Assert.Equal(70, checkout.Total);
+    }
+
+        [Fact]
+        public void EightC()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+
+            Assert.Equal(140, checkout.Total);
+        }
+
+        [Fact]
+        public void FiveD()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+
+            Assert.Equal(60, checkout.Total);
+        }
+
+        [Fact]
     public void Simple() {
       var checkout = new Checkout();
 
