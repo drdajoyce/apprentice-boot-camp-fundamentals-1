@@ -17,22 +17,6 @@ namespace McrDigital.Bootcamp1.Checkout
             products.Add(new Product("D", 15));
         }
 
-        public Product LookUpProduct(string sku)
-        {
-            Product result = null;
-
-            for (int i = 0; i < products.Count; i++)
-            {
-
-                if (products[i].sku.Equals(sku))
-                {
-                    result = new Product(products[i].sku, products[i].price);
-
-                }
-            }
-            return result;
-        }
-
         public IEnumerator<Product> GetEnumerator()
         {
             return products.GetEnumerator();

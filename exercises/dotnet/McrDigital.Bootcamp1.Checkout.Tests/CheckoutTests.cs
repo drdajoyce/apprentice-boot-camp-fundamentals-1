@@ -5,15 +5,6 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
 
     public class CheckoutTests
     {
-        [Fact]
-        public void LookUpA()
-        {
-            var checkout = new Checkout();
-
-            Product result = checkout.products.LookUpProduct("A");
-
-            Assert.Equal("A", result.sku);
-        }
 
         [Fact]
         public void OneA()
@@ -21,16 +12,6 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             var checkout = new Checkout();
 
             checkout.Scan("A");
-
-            Assert.Equal(50, checkout.Total);
-        }
-
-        [Fact]
-        public void OneAWithTotaller()
-        {
-            var checkout = new Checkout();
-
-            checkout.AddItemPriceToTotal("A");
 
             Assert.Equal(50, checkout.Total);
         }
